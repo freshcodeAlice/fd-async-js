@@ -1,0 +1,9 @@
+.card-wrapper {
+    width: 200px;
+    border: 2px solid salmon;
+    background-color: bisque;
+}
+
+.username {
+    font-size: 2em;
+}
