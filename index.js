@@ -27,7 +27,7 @@ console.log(resultOfRequest);
 
 resultOfRequest
 .then((responce)=>{
-    console.log('promise ok');
+    console.log(responce);
     return responce.json();
 }).then((successData) => {
     console.log(successData);
@@ -35,3 +35,14 @@ resultOfRequest
 .catch((reject)=>{
     console.log(reject);
 })
+
+
+/*
+1. Встановити LiveServer
+2. Створити json-файл
+3. Зробити запит на json (піднявши index.html -> LiveServer)
+4. Прийняти відповідь, розпарсити її як json та вивести на консоль
+
+
+
+*/
