@@ -1,11 +1,12 @@
+const prom = fetch('https://dummyjson.com/products/1');
 
-function loadImage() {
-    ///////завантажуємо картинку
-    return Promise.resolve(/*результат завантаження*/)
-}
-
-
-loadImage()
-.then((result)=>{
-    /* щось робим з результатом завантаження*/
+prom
+.then((data)=>{
+    console.log('RESOLVE');
+})
+.catch((error)=>{
+    console.log('REJECT');
+})
+.finally(()=>{
+    console.log('But anyway, Im back');
 })
