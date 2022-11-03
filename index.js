@@ -11,18 +11,26 @@ executor = function
 
 
 const promise = new Promise(function(resolve, reject){
-       /* if(it`s okay){
-            resolve()
-        } else {
-            reject()
-        }
-        */
+      if(Math.random() > 0.5) {
+        resolve('It`s okay');
+      } else {
+        reject('It`s not okay');
+      }
 });
 
-///////////////////
+console.log(promise);
 
-promise.then(()=>{
-    ///resolve callback
-},()=>{
-    //reject callback
-})
+promise.then((string) => {
+    console.log('RESOLVE: ', string);
+}, (error) => {
+    console.log('REJECT: ', error);
+});
+
+
+/*
+Створіть новий проміс, який буде викликати resolve, якщо 2+2 === 4
+і reject,якщо ні.
+Навісити обробники через then, які виведуть на консоль результат
+
+
+*/
