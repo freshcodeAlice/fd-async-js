@@ -33,7 +33,7 @@ function clearWidget() {
 }
 
 function createWidget(weatherObj) {
-    const cityName = createElement('h1', {}, 'Місто: ', weatherObj.name);
+    const cityName = createElement('h1', {}, 'Місто: ', getTranslate(weatherObj.name));
     const desription = createElement('h2', {}, 'Хмарність: ', weatherObj.weather[0].description);
     const temp = createElement('p',{}, 'Температура повітря: ', weatherObj.main.temp);
     const wind = createElement('p', {}, 'Швидкість вітру: ', weatherObj.wind.speed);
@@ -46,4 +46,18 @@ function createElement(type, {classNames=[]}, ...children) {
     elem.classList.add(...classNames);
     elem.append(...children);
     return elem;
+}
+
+
+function getTranslate(city) {
+    const cityName = {
+        'Kyiv': 'Київ',
+        'Dnipro': 'Дніпро',
+        'Kharkiv': 'Харків',
+        'Zaporizhzhia': 'Запоріжжя',
+        'Lviv': 'Львів',
+
+    }
+
+    return cityName[city];
 }
